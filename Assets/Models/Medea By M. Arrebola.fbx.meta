@@ -5,6 +5,16 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mdea_MAT
+    second: {fileID: 2100000, guid: ee580adce445937428ccd6c6f7a96968, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mdea_MAT_
+    second: {fileID: 2100000, guid: 45d78aa9a012424488c521cd7302f449, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: MEDEA diffuse
