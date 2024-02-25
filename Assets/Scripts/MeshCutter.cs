@@ -17,11 +17,11 @@ public class MeshCutter : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current[Key.Space].isPressed) Cut();
+        if (Keyboard.current[Key.Space].isPressed) Cut(new Vector3(0,0,0), new Vector3(0, 1, 0), new Vector3(0, 0, 1));
         else CutHappened = false;
     }
 
-    void Cut()
+    public void Cut(Vector3 point1, Vector3 point2, Vector3 point3)
     {
         if (CutHappened) return;
         CutHappened = true;
@@ -31,7 +31,7 @@ public class MeshCutter : MonoBehaviour
         objMesh.boneWeights = meshRenderer.sharedMesh.boneWeights;
         objMesh.bindposes = meshRenderer.sharedMesh.bindposes;
 
-        DivideMesh(objMesh);
+        DivideMesh(objMesh, new Plane(transform.InverseTransformPoint(point1), transform.InverseTransformPoint(point2), transform.InverseTransformPoint(point3)));
 
         //GameObject copy = new GameObject("Copy");
         //SkinnedMeshRenderer newMeshRenderer = copy.AddComponent(meshRenderer);
@@ -57,7 +57,7 @@ public class MeshCutter : MonoBehaviour
     }
 
 
-    void DivideMesh (Mesh mesh)
+    void DivideMesh (Mesh mesh, Plane dividePlane)
     {
         List<Vector3> vertex = new();
         //List<BoneWeight> BoneWeights = new(mesh.boneWeights);
@@ -89,7 +89,7 @@ public class MeshCutter : MonoBehaviour
         int part2Index = 0;
         while (i < vertex.Count)
         {
-            if (vertex[i].z < 0)
+            if (dividePlane.GetSide(vertex[i]))
             {
                 part1.Vertices.RemoveAt(part1Index);
                 part1.BoneWeights.RemoveAt(part1Index);
