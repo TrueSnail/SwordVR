@@ -7,7 +7,7 @@ public class HealthControler : MonoBehaviour
 {
     public MeshCutter meshCutter;
     HealthControlerCollider[] colliders;
-    List<HealthControlerColisionObject> ObjectsInside = new(); //Custom type?
+    List<HealthControlerColisionObject> ObjectsInside = new();
 
     private void Start()
     {

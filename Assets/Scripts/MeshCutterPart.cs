@@ -91,5 +91,16 @@ public class MeshCutterPart : ScriptableObject
         newMeshRenderer.materials = meshRenderer.materials;
         copy.transform.localScale = transform.localScale;
         copy.transform.SetPositionAndRotation(transform.position, transform.rotation);
+
+        var rigidbodies = copy.GetComponentsInChildren<Rigidbody>();
+        var colliders = copy.GetComponentsInChildren<Collider>();
+        foreach (var rigidbody in rigidbodies)
+        {
+            var joint = rigidbody.GetComponent<CharacterJoint>();
+            if (joint != null) joint.autoConfigureConnectedAnchor = false;
+            rigidbody.isKinematic = false;
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
+        }
     }
 }
