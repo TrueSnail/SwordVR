@@ -1870,6 +1870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshCutter: {fileID: 8096349659486210923}
+  HP: 1
 --- !u!1 &2633089453584205192 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3948933247560734027, guid: d3f30cd7265fc72489456459e84e46f5, type: 3}

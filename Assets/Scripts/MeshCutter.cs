@@ -54,10 +54,6 @@ public class MeshCutter : MonoBehaviour
                 part1.BoneWeights[i] = new BoneWeight() { weight0 = float.PositiveInfinity };
                 part1.UV[i] = Vector2.positiveInfinity;
                 part1.Normals[i] = Vector3.positiveInfinity;
-                //part1.Vertices.RemoveAt(part1Index);
-                //part1.BoneWeights.RemoveAt(part1Index);
-                //part1.UV.RemoveAt(part1Index);
-                //part1.Normals.RemoveAt(part1Index);
                 part1.VerticesShiftMap[i] = -1;
                 part2.VerticesShiftMap[i] = part2Index;
                 part1Index--;
@@ -68,10 +64,6 @@ public class MeshCutter : MonoBehaviour
                 part2.BoneWeights[i] = new BoneWeight() { weight0 = float.PositiveInfinity };
                 part2.UV[i] = Vector2.positiveInfinity;
                 part2.Normals[i] = Vector3.positiveInfinity;
-                //part2.Vertices.RemoveAt(part2Index);
-                //part2.BoneWeights.RemoveAt(part2Index);
-                //part2.UV.RemoveAt(part2Index);
-                //part2.Normals.RemoveAt(part2Index);
                 part2.VerticesShiftMap[i] = -1;
                 part1.VerticesShiftMap[i] = part1Index;
                 part2Index--;

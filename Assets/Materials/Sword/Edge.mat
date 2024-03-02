@@ -8,18 +8,16 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Edge
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: ef8c2e20da321dd4eaf3b8dc6761672e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _EMISSION
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -103,6 +101,7 @@ Material:
     - _Metallic: 0.811
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.543
@@ -114,9 +113,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - _Base: {r: 0.22641507, g: 0.22641507, b: 0.22641507, a: 1}
     - _BaseColor: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 1}
     - _Color: {r: 0.5490196, g: 0.5490196, b: 0.5490196, a: 1}
     - _EmissionColor: {r: 5.992159, g: 0.8477849, b: 0, a: 1}
+    - _Glow: {r: 5.992157, g: 1.6652049, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7047833253531368088
