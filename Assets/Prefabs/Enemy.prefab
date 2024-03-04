@@ -1892,7 +1892,7 @@ MonoBehaviour:
   animator: {fileID: 6669848134920294033}
   Player: {fileID: 0}
   LookSpeed: 4
-  StopDistance: 1.7
+  StopDistance: 1.2
   MovementSpeed: 2
   UpdateMovement: 1
   IsMoving: 0

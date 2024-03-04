@@ -20,6 +20,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
+        if (Player == null) Player = GameObject.FindGameObjectWithTag("Player");
         navigation = GetComponent<NavMeshAgent>();
         //navigation.stoppingDistance = StopDistance;
     }

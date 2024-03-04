@@ -35,19 +35,19 @@ public class Sword : MonoBehaviour, ISword
 
     private void OnCollisionEnter(Collision collision)
     {
-        controller.SendHapticImpulse(0.1f, 0.1f);
+        controller.SendHapticImpulse(0.03f, 0.1f);
     }
 
     public void OnCutBegin(Vector3 position, HealthControler cutObject)
     {
-        controller.SendHapticImpulse(0.2f, 0.1f);
+        controller.SendHapticImpulse(0.2f, 0.2f);
     }
 
     public void OnCutEnd(CutState state, List<Vector3> points, HealthControler cutObject)
     {
         if (state == CutState.Success)
         {
-            controller.SendHapticImpulse(1f, 0.3f);
+            controller.SendHapticImpulse(1f, 0.45f);
             GetComponent<AudioSource>().clip = cutSound;
             GetComponent<AudioSource>().Play();
             CanDamage = false;
