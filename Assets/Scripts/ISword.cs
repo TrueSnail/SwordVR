@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface ISword
 {
-    void OnCutBegin(Vector3 position, HealthControler cutObject);
-    void OnCutEnd(CutState state, List<Vector3> points, HealthControler cutObject);
+    void BeginCut(Vector3 position, HealthControler cutObject);
+    void EndCut(CutState state, List<Vector3> points, HealthControler cutObject);
     float GetDamageValue();
 }

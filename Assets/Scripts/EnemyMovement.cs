@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
     [HideInInspector]
     public bool UpdateMovement = true;
     [HideInInspector]
-    public bool IsMoving = false;
+    public bool IsMoving = true;
 
     private NavMeshAgent navigation;
     private float PlayerDistanceToleration = 0.15f;
@@ -62,6 +62,7 @@ public class EnemyMovement : MonoBehaviour
     private void UpdateRoation()
     {
         Quaternion lookRotation = Quaternion.LookRotation(Player.transform.position - transform.position);
+        lookRotation.eulerAngles = new Vector3(transform.rotation.eulerAngles.x, lookRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * LookSpeed);
     }
 }

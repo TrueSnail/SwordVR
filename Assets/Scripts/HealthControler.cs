@@ -28,7 +28,7 @@ public class HealthControler : MonoBehaviour
         if (obj == null)
         {
             obj = new HealthControlerColisionObject() { gameObject = arg1.gameObject, collisionAmount = 1, sword = sword};
-            sword.OnCutBegin(arg1.GetContact(0).point, this);
+            sword.BeginCut(arg1.GetContact(0).point, this);
             obj.CutPoints.Add(arg1.GetContact(0).point);
             ObjectsInside.Add(obj);
         }
@@ -55,13 +55,13 @@ public class HealthControler : MonoBehaviour
             if (obj.dealsDamage && meshCutter != null && DamageValue > 0)
             {
                 HP -= DamageValue;
-                sword.OnCutEnd(CutState.Success, obj.CutPoints, this);
+                sword.EndCut(CutState.Success, obj.CutPoints, this);
                 if (HP > 0) return;
 
                 meshCutter.Cut(obj.CutPoints[0], obj.CutPoints[1], arg2.LastContactPoint.point);
                 Destroy(gameObject);
             }
-            else sword.OnCutEnd(CutState.Failed, obj.CutPoints, this);
+            else sword.EndCut(CutState.Failed, obj.CutPoints, this);
         }
     }
 
